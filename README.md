@@ -8,7 +8,7 @@
 <img width="1140" src="https://raw.githubusercontent.com/SuoLab-GZLab/TCREpitopeBenchmark/main/result_path/20250501-201723.jpg">
 	
 ## Code Structure
-There are three modules for each model: (1)original model-based prediction, (2)model retraining, and (3)retrained model-based prediction on both seen and unseen data. You can select either to retrain the model or to generate predictions depending on your requirements. The relevant code for each model, contained in a Jupyter notebook, is saved in a separate folder with a file name that matches the model's name. Additionally, we provide the scripts for preprocessing all original datasets ```(Original_model_data_statistics.ipynb)```, prepping the datasets used in model retraining ```(Raw_database_data_filtering.ipynb)```, matching negative datasets ```(Negative_dataset_matching.ipynb)```,  and plotting all the figures shown in the article ```(fig)```。
+There are three modules for each model: (1)original model-based prediction, (2)model retraining, and (3)retrained model-based prediction on both seen and unseen data. You can select either to retrain the model or to generate predictions depending on your requirements. The relevant code for each model, contained in a Jupyter notebook, is saved in a separate folder with a file name that matches the model's name. Additionally, we provide the scripts for preprocessing all original datasets。
 
 
 
