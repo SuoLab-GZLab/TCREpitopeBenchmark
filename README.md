@@ -78,7 +78,7 @@ Retraining_model_prediction(testfile_path,modelfile_path,result_path)
 
 We have uploaded the retrained models to the figshare website. You can download them by visiting this link (https://doi.org/10.6084/m9.figshare.27020455) and accessing the "Retrained_model" folder.
 
-## Model Output(
+## Model Output
 The prediction results of each model are stored in the result_path directory, comprising the columns ``` Epitope, CDR3B,y_true, y_pred, and y_prob ```. Here, y_prob represents the predicted probability of TCR binding to the epitope, and y_pred indicates the binding status (“1”-binding, “0”-not binding) based on the probability. If y_prob is greater than or equal to 0.5, y_pred is set to 1; otherwise, y_pred is set to 0 (Both the CDR3β and CDR3β+others models output the following content).
 
 ``` 
