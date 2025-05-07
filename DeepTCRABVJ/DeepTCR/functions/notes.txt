@@ -1,0 +1,13 @@
+
+data_processing.py
+load_model_data():加载模型
+save_model_data():保存模型
+
+Train()执行：_train()
+_train():执行Run_Graph_SS()
+Run_Graph_SS():执行save_model_data()
+
+_residue():调用
+Sequence_Inference():执行load_model_data()
+
+df = pd.read_csv('../../Data/10x_Data/Data_Regression.csv')
