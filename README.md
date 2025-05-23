@@ -41,7 +41,7 @@ CAGQLAQGGSEKLVF,CSGAPWGTSGRSETQYF,AGSGIIISD,1,TRAJ57*01,TRBJ2-5*01,TRBV20-1*01,T
 
 ```
 
-If your data is unlabeled and you are only interested in the function of prediction, simply fill the ‘Affinity’ column with either 0 or 1. The performance statistics can be ignored in this case and the predicted binding affinity scores can be collected from the output files.
+If your data is unlabeled and you are only interested in the function of prediction, simply fill the ‘Affinity’ column with either 0 or 1. The performance statistics can be ignored in this case and the predicted binding affinity scores can be collected from the output files.We have provided all the datasets used in the article. You can download them by visiting this link (https://doi.org/10.6084/m9.figshare.27020455) and accessing the 'data' folder.
 
 ## Make Predictions Using Original Models
 The code for making predictions using original models has been encapsulated into a function named ```Original_model_prediction```.  You can directly call this function in the first module of the Jupyter notebook within the respective model folder. As an illustration, the original ATM-TCR model can be used with the following code snippet (Both the CDR3β and CDR3β+others models use the following processing methods):
@@ -53,7 +53,7 @@ result_path="../result_path/Original_model_prediction"
 Original_model_prediction(testfile_path,modelfile_path,result_path)
 ```
 
-The original models other than ATM_TCR have been deposited on the figshare website. You can download them by visiting this link (https://doi.org/10.6084/m9.figshare.27020455) and navigating to the "Original_model" folder.
+Except for the ATM_TCR model, the other original models have been uploaded to the figshare website. You can download them by visiting this link (https://doi.org/10.6084/m9.figshare.27020455) and navigating to the 'Original_model' folder under the 'models' folder.
 
 ## Model Retraining 
 We have refactored the training and testing code for each model into a function named ```Model_retraining```. You can directly call this function in the second module of the Jupyter notebook within the respective model folder. As an illustration, the ATM-TCR model can be retrained using the following code snippet (Both the CDR3β and CDR3β+others models use the following processing methods):
@@ -76,7 +76,7 @@ result_path="../result_path/Retraining_model_prediction"
 Retraining_model_prediction(testfile_path,modelfile_path,result_path)
 ```
 
-We have uploaded the retrained models to the figshare website. You can download them by visiting this link (https://doi.org/10.6084/m9.figshare.27020455) and accessing the "Retrained_model" folder.
+We have uploaded the retrained models to the figshare website. You can download them by visiting this link (https://doi.org/10.6084/m9.figshare.27020455) and accessing the 'Retrained_model' folder within the 'models' folder.
 
 ## Model Output
 The prediction results of each model are stored in the result_path directory, comprising the columns ``` Epitope, CDR3B,y_true, y_pred, and y_prob ```. Here, y_prob represents the predicted probability of TCR binding to the epitope, and y_pred indicates the binding status (“1”-binding, “0”-not binding) based on the probability. If y_prob is greater than or equal to 0.5, y_pred is set to 1; otherwise, y_pred is set to 0 (Both the CDR3β and CDR3β+others models output the following content).
