@@ -102,4 +102,4 @@ the models vibtcr and vibtcr-AB can only be accessed and used via the GitHub rep
 the model pMTnet can only be accessed and used via the GitHub repository (https://github.com/tianshilu/pMTnet);
 the model pMTnet−omni can only be accessed and used via the GitHub repository (https://github.com/Yuqiu-Yang/pMTnet_Omni_Document);
 the model MixTCRpred can only be accessed and used via the GitHub repository (https://github.com/GfellerLab/MixTCRpred);
-the model PanPep can only be accessed and used via the GitHub repository (https://github.com/bm2-lab/PanPep).
+the model PanPep can only be accessed and used via the GitHub repository (https://github.com/bm2-lab/PanPep); Since the TCRfinder model does not provide a LICENSE, it can be accessed from https://zhanggroup.org/TCRfinder.
