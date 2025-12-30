@@ -6,7 +6,7 @@ import sys
 from imblearn.under_sampling import RandomUnderSampler
 
 random.seed(123456)
-MAX_PEPTIDE_LENGTH = 11
+MAX_PEPTIDE_LENGTH = 15
 MAX_TCR_LENGTH = 19
 MAX_MHC_LENGTH = 34
 
@@ -28,8 +28,8 @@ def dataRepresentationBlosum62WithMHCb(X_data):
     m_cdr3 = enccodeListBlosumMaxLen(X_data.CDR3b, encoding, 19)
     m_cdr3 = m_cdr3.reshape(len(m_cdr3), 380)
     
-    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 11)
-    m_epitope = m_epitope.reshape(len(m_epitope), 220)
+    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 15)
+    m_epitope = m_epitope.reshape(len(m_epitope), 300)
     
     m_mhc = enccodeListBlosumMaxLen(X_data.MHC, encoding, 34)
     m_mhc = m_mhc.reshape(len(m_mhc), 680)
@@ -49,7 +49,7 @@ def dataRepresentationBlosum62WithoutMHCb(X_data):
     m_cdr3 = enccodeListBlosumMaxLen(X_data.CDR3b, encoding, 19)
     m_cdr3 = m_cdr3.reshape(len(m_cdr3), 380)
     
-    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 11)
+    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 15)
     m_epitope = m_epitope.reshape(len(m_epitope), 220)
     
     df_res1 = pd.DataFrame(m_cdr3)
@@ -67,8 +67,8 @@ def dataRepresentationBlosum62WithoutMHCa(X_data):
     m_cdr3 = enccodeListBlosumMaxLen(X_data.CDR3a, encoding, 19)
     m_cdr3 = m_cdr3.reshape(len(m_cdr3), 380)
     
-    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 11)
-    m_epitope = m_epitope.reshape(len(m_epitope), 220)
+    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 15)
+    m_epitope = m_epitope.reshape(len(m_epitope), 300)
     
     df_res1 = pd.DataFrame(m_cdr3)
     df_res2 = pd.DataFrame(m_epitope)
@@ -85,8 +85,8 @@ def dataRepresentationBlosum62WithMHCa(X_data):
     m_cdr3 = enccodeListBlosumMaxLen(X_data.CDR3a, encoding, 19)
     m_cdr3 = m_cdr3.reshape(len(m_cdr3), 380)
     
-    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 11)
-    m_epitope = m_epitope.reshape(len(m_epitope), 220)
+    m_epitope = enccodeListBlosumMaxLen(X_data.epitope, encoding, 15)
+    m_epitope = m_epitope.reshape(len(m_epitope), 300)
     
     m_mhc = enccodeListBlosumMaxLen(X_data.MHC, encoding, 34)
     m_mhc = m_mhc.reshape(len(m_mhc), 680)
@@ -102,7 +102,7 @@ def dataRepresentationBlosum62WithMHCa(X_data):
 
 def checkLengthEpitope(df):
     df["len_epitope"] = df.epitope.str.len()
-    df = df[(df["len_epitope"] <= 11) & (df["len_epitope"] >= 8)]
+    df = df[(df["len_epitope"] <= 15) & (df["len_epitope"] >= 8)]
     df = df.drop(['len_epitope'], axis=1)
     discard = ["\*", '_', '-', 'O', '1', 'y', 'l', 'X', '/', ' ']
     df = df[~df.epitope.str.contains('|'.join(discard))]
@@ -120,7 +120,7 @@ def checkLengthTCR(df):
 
 def checkLengthFulla(df):
     df["len_epitope"] = df.epitope.str.len()
-    df = df[(df["len_epitope"] <= 11) & (df["len_epitope"] >= 8)]
+    df = df[(df["len_epitope"] <= 15) & (df["len_epitope"] >= 8)]
     df["len_cdr3"] = df.CDR3a.str.len()
     df = df[(df["len_cdr3"] <= 19) & (df["len_cdr3"] >= 8)]
     df = df.drop(['len_epitope', 'len_cdr3'], axis=1)
@@ -133,7 +133,7 @@ def checkLengthFulla(df):
 
 def checkLengthFullb(df):
     df["len_epitope"] = df.epitope.str.len()
-    df = df[(df["len_epitope"] <= 11) & (df["len_epitope"] >= 8)]
+    df = df[(df["len_epitope"] <= 15) & (df["len_epitope"] >= 8)]
     df["len_cdr3"] = df.CDR3b.str.len()
     df = df[(df["len_cdr3"] <= 19) & (df["len_cdr3"] >= 8)]
     df = df.drop(['len_epitope', 'len_cdr3'], axis=1)
