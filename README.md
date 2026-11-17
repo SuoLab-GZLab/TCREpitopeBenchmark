@@ -17,6 +17,7 @@ You need to create a separate environment for each model as these models are bas
 
 ## Input File Format
 Note:The `data` folder in the GitHub repository contains example data only, not the data used to evaluate the model.
+
 The model input should be a CSV file with the following format:
 ```
 #1.CDR3β
